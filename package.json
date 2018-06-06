@@ -1,0 +1,70 @@
+{
+  "name": "textile-commons",
+  "version": "1.0.0",
+  "description": "View creative commons attributed images over ipfs",
+  "main": "dist/index.html",
+  "scripts": {
+    "start": "ecstatic dist",
+    "clean": "shx rm -rf dist",
+    "build": "run-s build:*",
+    "build:copy": "run-p build:copy:*",
+    "build:copy:html": "shx mkdir -p dist && shx cp src/index.html dist/index.html",
+    "build:copy:images": "shx mkdir -p dist/images && shx cp src/images/* dist/images",
+    "build:js": "browserify src/main.js -o dist/bundle.js -g uglifyify",
+    "watch": "npm-run-all build:* --parallel watch:*",
+    "watch:js": "watchify -t envify src/main.js -o dist/bundle.js -v",
+    "watch:serve": "ecstatic --cache=0 dist",
+    "test": "standard"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "env"
+          ]
+        }
+      ],
+      [
+        "envify"
+      ]
+    ]
+  },
+  "author": "Carson Farmer",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.0",
+    "ecstatic": "^3.2.0",
+    "envify": "^4.1.0",
+    "npm-run-all": "^4.1.2",
+    "shx": "^0.2.2",
+    "standard": "^11.0.0",
+    "uglifyify": "^4.0.5",
+    "watchify": "^3.11.0"
+  },
+  "dependencies": {
+    "natural-gallery-js": "^2.8.0",
+    "queue": "^4.4.2",
+    "window.ipfs-fallback": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/textileio/textile-commons.git"
+  },
+  "keywords": [
+    "ipfs",
+    "peer",
+    "textile",
+    "CC0",
+    "photos"
+  ],
+  "bugs": {
+    "url": "https://github.com/textileio/textile-commons/issues"
+  },
+  "homepage": "https://github.com/textileio/textile-commons#readme"
+}
