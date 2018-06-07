@@ -1,4 +1,4 @@
-# Texile's ĐApp Template
+# Texile's IPFS ĐApp Template
 
 > Basic template for building simple IPFS-based browser ĐApps
 
