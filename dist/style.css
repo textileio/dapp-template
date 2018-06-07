@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  margin-top: 16px;
+  position: relative;
+}
+
+.footer {
+  width: 100%;
+  height: 50px;
+  background: white;
+  color: #2935FF;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+}
+
+.footer img.logo {
+  width: 26px;
+  position: relative;
+  top: 7px;
+}

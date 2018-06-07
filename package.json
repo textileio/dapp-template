@@ -10,6 +10,7 @@
     "build:copy": "run-p build:copy:*",
     "build:copy:html": "shx mkdir -p dist && shx cp src/index.html dist/index.html",
     "build:copy:images": "shx mkdir -p dist/images && shx cp src/images/* dist/images",
+    "build:copy:css": "shx mkdir -p dist && shx cp src/style.css dist/style.css",
     "build:js": "browserify src/main.js -o dist/bundle.js -g uglifyify",
     "watch": "npm-run-all build:* --parallel watch:*",
     "watch:js": "watchify -t envify src/main.js -o dist/bundle.js -v",
