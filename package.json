@@ -1,7 +1,7 @@
 {
-  "name": "textile-commons",
+  "name": "dapp-template",
   "version": "1.0.0",
-  "description": "View creative commons attributed images over ipfs",
+  "description": "Basic template for building simple IPFS-based browser ĐApps",
   "main": "dist/index.html",
   "scripts": {
     "start": "ecstatic dist",
@@ -31,7 +31,7 @@
       ]
     ]
   },
-  "author": "Carson Farmer",
+  "author": "Carson Farmer <carson@textile.io>",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -48,23 +48,22 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
-    "natural-gallery-js": "^2.8.0",
     "queue": "^4.4.2",
     "window.ipfs-fallback": "^1.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/textileio/textile-commons.git"
+    "url": "git+https://github.com/textileio/dapp-template.git"
   },
   "keywords": [
     "ipfs",
     "peer",
     "textile",
-    "CC0",
-    "photos"
+    "dapp",
+    "distributed"
   ],
   "bugs": {
-    "url": "https://github.com/textileio/textile-commons/issues"
+    "url": "https://github.com/textileio/dapp-template/issues"
   },
-  "homepage": "https://github.com/textileio/textile-commons#readme"
+  "homepage": "https://github.com/textileio/dapp-template#readme"
 }

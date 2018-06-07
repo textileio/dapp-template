@@ -1,10 +1,8 @@
-# Texile Commons
+# Texile's ĐApp Template
 
-> View creative commons attributed images over ipfs
+> Basic template for building simple IPFS-based browser ĐApps
 
-Demo: https://github.com/textileio/textile-commons
-
-<img width="1136" alt="screen shot 2018-03-05 at 21 42 40" src="">
+Demo: https://github.com/textileio/dapp-template
 
 ## Install
 
@@ -19,6 +17,10 @@ Demo: https://github.com/textileio/textile-commons
 ### Develop
 
 Instead of steps 3 & 4: `yarn watch`
+
+### Deploy
+
+Add to ipfs via `ipfs add -r dist/`
 
 ### Thanks
 
