@@ -2,8 +2,6 @@
 
 > Basic template for building simple IPFS-based browser ĐApps
 
-Demo: https://github.com/textileio/dapp-template
-
 ## Install
 
 1. This app works best with `window.ipfs`. Install the IPFS Companion web extension:
