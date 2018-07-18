@@ -14,6 +14,7 @@
     "build:js": "browserify src/main.js -o dist/bundle.js -g uglifyify",
     "watch": "npm-run-all build:* --parallel watch:*",
     "watch:js": "watchify -t envify src/main.js -o dist/bundle.js -v",
+    "watch:web": "nodemon --watch src --ext html,css --exec 'npm-run-all build:copy'",
     "watch:serve": "ecstatic --cache=0 dist",
     "test": "standard"
   },
@@ -42,6 +43,7 @@
     "browserify": "^16.1.0",
     "ecstatic": "^3.2.0",
     "envify": "^4.1.0",
+    "nodemon": "^1.18.3",
     "npm-run-all": "^4.1.2",
     "shx": "^0.2.2",
     "standard": "^11.0.0",
