@@ -1,28 +1,44 @@
-body {
+html, body {
   margin: 0;
-  margin-top: 16px;
+  height:100%;
   position: relative;
+  font-family: Tahoma, Helvetica, Verdana, sans-serif;
 }
 
-.footer {
-  width: 100%;
-  height: 50px;
+.pic {
+  background-size: contain;
+  background-position: left top;
+  height: 100vh; /* vh = viewport height */
+  background-repeat: no-repeat;
+}
+
+.profile {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  padding: 20px;
   background: white;
-  color: #2935FF;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  border: 1px solid #202020;
-  -webkit-box-shadow: 0px -3px 3px rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 0px -3px 3px rgba(50, 50, 50, 0.5);
-  box-shadow: 0px -3px 3px rgba(50, 50, 50, 0.5);
 }
 
-.footer img.logo {
-  width: 22px;
-  position: relative;
-  top: 6px;
+h1 {
+  margin-top: 0px;
+  text-transform: uppercase;
+}
+
+.bio {
+  width: 300px;
+}
+
+#social {
+  margin-top: 1em;
+  font-size: 2em;
+}
+
+.social {
+  padding-right: 1em;
+}
+
+a:link, a:hover, a:visited {
+  color: darkgrey;
+  text-decoration: none;
 }
