@@ -5,14 +5,25 @@ html, body {
   font-family: Tahoma, Helvetica, Verdana, sans-serif;
 }
 
-.pic {
+h1 {
+  margin-top: 0px;
+  text-transform: uppercase;
+}
+
+a:link, a:hover, a:visited {
+  color: darkgrey;
+  text-decoration: none;
+}
+
+#image {
   background-size: contain;
+  background-image: url('https://i.stack.imgur.com/l60Hf.png');
   background-position: left top;
-  height: 100vh; /* vh = viewport height */
+  height: 100vh;
   background-repeat: no-repeat;
 }
 
-.profile {
+#profile {
   position: absolute;
   right: 5%;
   top: 5%;
@@ -20,12 +31,7 @@ html, body {
   background: white;
 }
 
-h1 {
-  margin-top: 0px;
-  text-transform: uppercase;
-}
-
-.bio {
+#bio {
   width: 300px;
 }
 
@@ -36,9 +42,4 @@ h1 {
 
 .social {
   padding-right: 1em;
-}
-
-a:link, a:hover, a:visited {
-  color: darkgrey;
-  text-decoration: none;
 }

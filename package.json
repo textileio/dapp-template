@@ -51,6 +51,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
+    "jquery": "^3.3.1",
     "query-string": "^6.1.0",
     "queue": "^4.4.2",
     "window.ipfs-fallback": "^1.0.0"
