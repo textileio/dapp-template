@@ -15,9 +15,27 @@ a:link, a:hover, a:visited {
   text-decoration: none;
 }
 
+#loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid rgb(11, 58, 83);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -76px;
+    margin-top: -76px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 #image {
   background-size: contain;
-  background-image: url('https://i.stack.imgur.com/l60Hf.png');
   background-position: left top;
   height: 100vh;
   background-repeat: no-repeat;
@@ -26,7 +44,7 @@ a:link, a:hover, a:visited {
 #profile {
   position: absolute;
   right: 5%;
-  top: 5%;
+  top: 2.5rem;
   padding: 20px;
   background: white;
 }

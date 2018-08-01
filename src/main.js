@@ -1,9 +1,11 @@
 import 'babel-polyfill'
-import getIpfs from 'window.ipfs-fallback'
+import ipfsIsRequired from 'window.ipfs-is-required'
 import queryString from 'query-string'
 import $ from 'jquery'
 
 const buildPage = (json) => {
+  // Hide loader
+  console.log($('#loader').css('display', 'none'))
   // Add profile image
   $('#image').css('background-image', `url('${json.pic.url}')`)
   // Add name
@@ -30,8 +32,12 @@ const buildPage = (json) => {
 
 const setup = async () => {
   try {
-    // Create IPFS Peer
-    const ipfs = await getIpfs()
+    // Access IPFS peer
+    if (!window.ipfs) {
+      // throw new Error('window.ipfs is undefined')
+      console.log('window.ipfs is undefined')
+      return
+    }
     // Grab the ID if provided, otherwise use local id
     const query = queryString.parse(location.search)
     const id = await ipfs.id()
@@ -52,4 +58,5 @@ const setup = async () => {
     console.log(err)
   }
 }
+ipfsIsRequired()
 setup()

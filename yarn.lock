@@ -4111,6 +4111,10 @@ window.ipfs-fallback@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/window.ipfs-fallback/-/window.ipfs-fallback-1.1.0.tgz#10682bf75fa244637ba15f94e6e987d75e402829"
 
+window.ipfs-is-required@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/window.ipfs-is-required/-/window.ipfs-is-required-1.0.2.tgz#a27a7c771f96d2fe3d1b895fbff2a2bf4b9b9d07"
+
 wordwrap@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
