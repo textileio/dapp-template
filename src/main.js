@@ -5,7 +5,7 @@ import $ from 'jquery'
 
 const buildPage = (json) => {
   // Hide loader
-  console.log($('#loader').css('display', 'none'))
+  $('#loader').css('display', 'none')
   // Add profile image
   $('#image').css('background-image', `url('${json.pic.url}')`)
   // Add name
