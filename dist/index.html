@@ -15,20 +15,25 @@
     </div>
     <div id="profile">
       <h1 id="name">
-        <span data-bind="text: name.first"></span>
-        <span data-bind="text: name.last"></span>
+        <span data-bind="htmlLazy: name.first,
+                         contentEditable: editing"></span>
+        <span data-bind="htmlLazy: name.last,
+                         contentEditable: editing"></span>
       </h1>
       <div class="work">
         <ul data-bind="foreach: work">
           <li>
             <h2 id="title">
-              <span data-bind="text: title"></span> at
-              <span data-bind="text: employer"></span>
+              <span data-bind="htmlLazy: title,
+                               contentEditable: $root.editing"></span> at
+              <span data-bind="htmlLazy: employer,
+                               contentEditable: $root.editing"></span>
             </h2>
           </li>
         </ul>
       </div>
-      <div id="bio" data-bind="text: bio"></div>
+      <div id="bio" data-bind="htmlLazy: bio,
+                               contentEditable: editing"></div>
       <div class="social">
         <ul data-bind="foreach: social">
           <li>
@@ -38,6 +43,14 @@
           </li>
         </ul>
       </div>
+      <button id="edit" data-bind="click: editing.bind($root, !editing())">
+        <i class="fas fa-pencil-alt"></i>
+        <!--ko text: editing() ? ' Save changes' : ' Edit profile' --><!--/ko-->
+      </button>
+        <input type="file" id="imageSelect" accept="image/*" style="display:none">
+        <button id="check" onclick="document.getElementById('imageSelect').click()">
+          <i class="fas fa-image"></i> Replace image
+        </button>
     </div>
   </div>
   <script src="bundle.js"></script>
