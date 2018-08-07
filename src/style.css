@@ -47,17 +47,25 @@ a:link, a:hover, a:visited {
   top: 2.5rem;
   padding: 20px;
   background: white;
+  width: 400px;
 }
 
-#bio {
-  width: 300px;
+h2 {
+  font-size: 1.2em;
+  margin: 0 auto;
 }
 
-#social {
-  margin-top: 1em;
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.social ul {
+  overflow: hidden;
   font-size: 2em;
 }
 
-.social {
-  padding-right: 1em;
+.social li {
+  float: left;
+  margin-right: 1em;
 }

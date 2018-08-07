@@ -9,14 +9,35 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
 </head>
 <body>
+  <div id="loader"></div>
   <div id="main">
-    <div id="loader"></div>
-    <div id="image"></div>
+    <div id="image" data-bind="style: { 'backgroundImage': `url(${pic.url()})` }">
+    </div>
     <div id="profile">
-      <h1 id="name"></h1>
-      <h2 id="title"></h2>
-      <div id="bio"></div>
-      <div id="social"></div>
+      <h1 id="name">
+        <span data-bind="text: name.first"></span>
+        <span data-bind="text: name.last"></span>
+      </h1>
+      <div class="work">
+        <ul data-bind="foreach: work">
+          <li>
+            <h2 id="title">
+              <span data-bind="text: title"></span> at
+              <span data-bind="text: employer"></span>
+            </h2>
+          </li>
+        </ul>
+      </div>
+      <div id="bio" data-bind="text: bio"></div>
+      <div class="social">
+        <ul data-bind="foreach: social">
+          <li>
+            <a data-bind="attr: { href: url() }">
+              <i data-bind="attr: { class: `fab fa-${service()}` }"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <script src="bundle.js"></script>

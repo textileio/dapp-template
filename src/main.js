@@ -1,43 +1,18 @@
 import 'babel-polyfill'
-import ipfsIsRequired from 'window.ipfs-is-required'
 import queryString from 'query-string'
-import $ from 'jquery'
+import $ from 'jQuery'
+import ko from 'knockout'
+import 'knockout-mapping'
+import ipfsAPI from 'ipfs-api'
 
-const buildPage = (json) => {
-  // Hide loader
-  $('#loader').css('display', 'none')
-  // Add profile image
-  $('#image').css('background-image', `url('${json.pic.url}')`)
-  // Add name
-  $('#name').text(`${json.name.first} ${json.name.last}`)
-  // Add job title and employer (only first)
-  const work = json.work[0]
-  const link = $('<a>', { text: work.employer, href: work.url })
-  $('#title').html(`${work.title} at `).append(link)
-  // Add bio
-  $('#bio').text(`${json.bio}`)
-  // Add social media links
-  const social = $('#social')
-  for (let item of json.social) {
-    const isWebsite = item.service === 'website'
-    social.append(
-      $('<a>', { href: item.url, class: 'social' }).append(
-        $('<i>', {
-          class: isWebsite ? 'fas fa-globe' : `fab fa-${item.service}`
-        })
-      )
-    )
-  }
-}
+// Global view model variable
+var viewModel
+var ipfs
 
 const setup = async () => {
   try {
-    // Access IPFS peer
-    if (!window.ipfs) {
-      // throw new Error('window.ipfs is undefined')
-      console.log('window.ipfs is undefined')
-      return
-    }
+    $('#loader').css("display", "block")
+    ipfs = ipfsAPI()
     // Grab the ID if provided, otherwise use local id
     const query = queryString.parse(location.search)
     const id = await ipfs.id()
@@ -52,11 +27,14 @@ const setup = async () => {
     const string = String.fromCharCode.apply(null, files[0].content)
     // Parse/convert to JSON
     const json = JSON.parse(string)
-    // Build the page from the JSON information
-    buildPage(json)
+    // Setup a viewModel based on our JSON structure
+    viewModel = ko.mapping.fromJS(json)
+    // Apply the viewModel bindings
+    ko.applyBindings(viewModel)
+    // Hide the spinner/loader
+    $('#loader').css("display", "none")
   } catch(err) {
     console.log(err)
   }
 }
-ipfsIsRequired()
 setup()
