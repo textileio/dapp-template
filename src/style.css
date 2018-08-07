@@ -69,3 +69,8 @@ ul {
   float: left;
   margin-right: 1em;
 }
+
+[contenteditable="true"] {
+  outline-style: dotted;
+  outline-color: darkgrey;
+}
