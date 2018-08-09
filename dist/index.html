@@ -2,16 +2,29 @@
 <html>
 <head>
   <meta charset="utf8">
-  <title>Texile's IPFS ĐApp Template</title>
+  <title>Profile Chat</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div id="main"></div>
-  <div class="footer">
-    Another
-    <a href="https://ipfs.io"><img class="logo" src="images/ipfs-logo.png"/></a>
-    ĐApp by the fine folks at
-    <a href="https://textile.io"><img class="logo" src="images/textile-logo.png"/></a>
+  <div id="main">
+    <div class="controls">
+      <input id="name" type="text" data-bind="value: name"
+             placeholder="Pick a name (or remain anonymous)"/>
+    </div>
+    <div data-bind="foreach: { data: messages, as: 'msg' }" class="output">
+      <div>
+        <a data-bind="text: msg.name,
+                      css: { local: msg.from === $root.id() },
+                      attr: { href: `https://ipfs.io/ipns/${msg.from}` }"
+                      title="View Profile"
+                      class="username"></a>
+      <div data-bind="text: msg.text"></div>
+      </div>
+    </div>
+    <div class="input">
+      <input id="text" type="text" placeholder="Type a message"
+             data-bind="value: message, enable: subscribed" />
+    </div>
   </div>
   <script src="bundle.js"></script>
 </body>

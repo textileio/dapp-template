@@ -1,28 +1,26 @@
-body {
-  margin: 0;
-  margin-top: 16px;
-  position: relative;
+html, body {
+  margin: 10px;
+  font-family: Tahoma, Helvetica, Verdana, sans-serif;
 }
 
-.footer {
+input, label {
   width: 100%;
-  height: 50px;
-  background: white;
-  color: #2935FF;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  border: 1px solid #202020;
-  -webkit-box-shadow: 0px -3px 3px rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 0px -3px 3px rgba(50, 50, 50, 0.5);
-  box-shadow: 0px -3px 3px rgba(50, 50, 50, 0.5);
+  height: 20px;
 }
 
-.footer img.logo {
-  width: 22px;
-  position: relative;
-  top: 6px;
+a:link, a:hover, a:visited {
+  color: darkgrey;
+  text-decoration: none;
+}
+
+.output {
+  margin: 10px 0px;
+  height: calc(100vh - 120px);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+a.local {
+  color: lightblue;
 }
