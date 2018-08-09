@@ -15,9 +15,7 @@
       <div>
         <a data-bind="text: msg.name,
                       css: { local: msg.from === $root.id() },
-                      attr: { href: `https://ipfs.io/ipns/${msg.from}` }"
-                      title="View Profile"
-                      class="username"></a>
+                      attr: { href: `https://ipfs.io/ipns/${msg.from}` }"></a>
       <div data-bind="text: msg.text"></div>
       </div>
     </div>
